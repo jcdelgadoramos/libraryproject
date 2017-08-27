@@ -1,15 +1,15 @@
 <div class="col-sm-6 col-md-4">    
     <div class="thumbnail">
     <img src="https://i.pinimg.com/236x/12/5d/a6/125da6300cc7045e5210e5490b5b0f85--minimalist-book-book-cover-design.jpg" alt="Portada">
-    <div class="caption">
+    <div class="caption">        
         <h3>{{ book.titulo }}</h3>
         <h4>{{ book.autor }}</h4>
         <p>{{ book.numero_ejemplares }} ejemplares</p>
         <p>Editorial: {{ book.editorial }}</p>
         <p>Año de publicación: {{ book.fecha_publicacion }}</p>
-        <form>
+        <form (ngSubmit)="onSubmit(form)" #form="ngForm">
             <button class="btn btn-primary" routerLink="/edit/{{ book.id_book }}">Editar</button> 
-            <button class="btn btn-danger" routerLink="/edit/{{ book.id_book }}">Eliminar</button>
+            <button type="submit" class="btn btn-danger">Eliminar</button>
         </form>
     </div>
     </div>

@@ -17,4 +17,8 @@ export class MaterialComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit(submittedForm) {
+    this.bookService.removeBook(this.book.id_book);
+  }
+
 }

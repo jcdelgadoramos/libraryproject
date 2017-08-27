@@ -133,4 +133,15 @@ export class BookService {
     })
   }
 
+  removeBook(id_book) {
+    const pos = this.availableBooks.findIndex((book) => {
+      return book.id_book == id_book;
+    })
+    if (pos == -1) {
+    } else {
+      console.log(pos);
+      this.availableBooks.splice(pos,1);
+    }
+  }
+
 }
