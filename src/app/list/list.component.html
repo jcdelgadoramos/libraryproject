@@ -1,0 +1,32 @@
+<form>
+    <br>        
+    <div class="form-group">
+      <label for="autor">Por autor</label>
+      <select id="autor"
+              name="autor" 
+              class="form-control" 
+              [(ngModel)]="autor"
+              (change)="filterByAuthor()">
+        <option *ngFor="let author of authors" [ngValue]="author">
+          {{ author }}
+        </option>
+      </select>
+    </div>
+
+    <div class='form-group'>        
+        <label for="year">o por fecha de publicación</label>
+        <select id="year"
+                name="year" 
+                class="form-control" 
+                [(ngModel)]="year"
+                (change)="filterByYear()">
+          <option *ngFor="let year of years" [ngValue]="year">
+            {{ year }}
+          </option>
+        </select>
+    </div>
+</form> 
+
+<div class="row">
+    <app-material *ngFor="let book of books" [book]="book"></app-material>
+</div>

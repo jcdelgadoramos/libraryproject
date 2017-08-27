@@ -5,10 +5,12 @@
         <h3>{{ book.titulo }}</h3>
         <h4>{{ book.autor }}</h4>
         <p>{{ book.numero_ejemplares }} ejemplares</p>
-        <p>
-            <button class="btn btn-primary" routerLink="/book/{{ book.id_book }}">Ver detalles</button> 
-            <button class="btn btn-default" routerLink="/edit/{{ book.id_book }}">Editar</button>
-        </p>
+        <p>Editorial: {{ book.editorial }}</p>
+        <p>Año de publicación: {{ book.fecha_publicacion }}</p>
+        <form>
+            <button class="btn btn-primary" routerLink="/edit/{{ book.id_book }}">Editar</button> 
+            <button class="btn btn-danger" routerLink="/edit/{{ book.id_book }}">Eliminar</button>
+        </form>
     </div>
     </div>
 </div>

@@ -9,10 +9,10 @@ import { NavigateComponent } from './navigate/navigate.component';
 import { MaterialEditComponent } from './material-edit/material-edit.component';
 import { FieldComponent } from './field/field.component';
 import { MaterialComponent } from './material/material.component';
-import { MaterialFullComponent } from './material-full/material-full.component';
 import { MarcService } from './marc.service';
 import { BookService } from './book.service';
 import { BookDetailService } from './book-detail.service';
+import { ListComponent } from './list/list.component';
 
 const routes = [
   { path: '', component: NavigateComponent },
@@ -20,15 +20,17 @@ const routes = [
   /*{ path: 'book', component: MaterialFullComponent, children: [
     { path: '', redirectTo: '', pathMatch: 'full' },
     { path: ':id_book', component: MaterialFullComponent }
-  ] },*/
+  ] },
   { path: 'book/:id_book', component: MaterialEditComponent },
   { path: 'book/:new', component: MaterialEditComponent },
-  /*{ path: 'edit', component: MaterialEditComponent, children: [
+  { path: 'edit', component: MaterialEditComponent, children: [
     { path: '', redirectTo: '', pathMatch: 'full' },
     { path: 'new', component: MaterialEditComponent },
     { path: ':id', component: MaterialEditComponent }
   ] },*/
+  { path: 'list', component: ListComponent },
   { path: 'edit/:id', component: MaterialEditComponent },
+  { path: 'edit/new', component: MaterialEditComponent },
   { path: '**', redirectTo: '/'}
 ];
 
@@ -38,9 +40,9 @@ const routes = [
     AppLoginComponent,
     NavigateComponent,
     MaterialEditComponent,
-    MaterialFullComponent,
     FieldComponent,
-    MaterialComponent
+    MaterialComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

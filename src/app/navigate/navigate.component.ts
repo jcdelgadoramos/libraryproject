@@ -8,8 +8,10 @@ import { BookService } from '../book.service';
 })
 export class NavigateComponent implements OnInit {
   bookService: BookService;
-
   books = []; 
+
+  busqueda;
+  filtro = '';
 
   constructor(bookService: BookService) {
     this.bookService = bookService;
@@ -21,6 +23,11 @@ export class NavigateComponent implements OnInit {
   
   getMaterials() {
     return this.books.slice();
+  }
+
+  filter(){
+    console.log(this.busqueda);
+    this.books = this.bookService.filterBooks(this.filtro, this.busqueda);
   }
 
 }

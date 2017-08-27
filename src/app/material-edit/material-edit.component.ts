@@ -16,7 +16,7 @@ export class MaterialEditComponent implements OnInit {
                     autor: '', 
                     titulo: '',
                     editorial: '',
-                    fecha_publicacion: '',
+                    fecha_publicacion: null,
                     portada: ''
   };
 
@@ -48,6 +48,11 @@ export class MaterialEditComponent implements OnInit {
                                 submittedForm.value.fecha_publicacion,
                                 submittedForm.value.numero_ejemplares,
                                 submittedForm.value.portada);
+    
+  }
+
+  goBack() {
+
   }
 
 }
