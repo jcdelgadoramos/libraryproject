@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BookService } from '../book.service';
 
 @Component({
   selector: 'app-material',
@@ -6,9 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./material.component.css']
 })
 export class MaterialComponent implements OnInit {
-  @Input() item;
+  @Input() book;
+  bookService: BookService;
 
-  constructor() { }
+  constructor(bookService: BookService) { 
+    this.bookService = bookService;
+  }
 
   ngOnInit() {
   }

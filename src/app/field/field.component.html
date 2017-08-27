@@ -1,27 +1,42 @@
 <h2>Editar el campo:</h2>
 
-<label for="campo">Editar campo</label>
-<select id="campo" name="campo" class="form-control"></select>
-<form>
+<div class="form-group">
+  <label for="campo">Seleccionar campo a editar</label>
+  <select id="campo"  class="form-control" [(ngModel)]="selectedMarc">
+    <option *ngFor="let marc of availableMarc" [ngValue]="marc">
+      {{ marc.nombre }}
+    </option>
+  </select>
+</div>
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
   <h3>Editar datos del campo</h3>
   <div class="form-group">
     <label for="id_marc">Código MARC</label>
-    <input type="text" id="id_marc" name="id_marc" class="form-control">
+    <input  type="text" 
+            id="id_marc" 
+            name="id_marc" 
+            class="form-control" 
+            [ngModel]="selectedMarc.id_marc" 
+            required
+            #idMarcCtrl="ngModel">
+    <span class="help-block" *ngIf="idMarcCtrl.invalid && idMarcCtrl.touched">Campo obligatorio</span>
   </div>
   <div class="form-group">
     <label for="nombre">Nombre del campo</label>
-    <input type="text" id="nombre" class="form-control">
+    <input  type="text" 
+            id="nombre" 
+            name="nombre" 
+            class="form-control" 
+            [ngModel]="selectedMarc.nombre" 
+            required
+            #nombreCtrl="ngModel">
+    <span class="help-block" *ngIf="nombreCtrl.invalid && nombreCtrl.touched">Campo obligatorio</span>
   </div>
   <div class="form-group">
     <label for="descripcion">Descripción</label>
-    <textarea id="descripcion" class="form-control"></textarea>
+    <textarea id="descripcion" name="descripcion" class="form-control" [ngModel]="selectedMarc.descripcion"></textarea>
   </div>
-  <div class="form-group">
-    <label for="subcampo">Editar subcampo</label>
-    <select id="subcampo" name="subcampo" class="form-control"></select>  
-    <h4>Editar datos del subcampo</h4>
-      <app-subfield></app-subfield>
-    <button type="submit" value="Ingresar" class='btn btn-primary'>Ingresar</button>
-    <button type="reset" value="Limpiar" class='btn'>Limpiar</button>
-  </div>
+  <button type="submit" class='btn btn-primary' [disabled]="form.invalid">Guardar</button>
+  <button type="reset" class='btn btn-default'>Limpiar</button>
+  <button type="button" class='btn btn-danger'>Eliminar</button>
 </form>
