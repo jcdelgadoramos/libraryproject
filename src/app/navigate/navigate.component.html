@@ -1,9 +1,13 @@
-<form action="" method="post">
-    Buscar: <input type="text" id="search_term"><br>
-    Filtrar por: <input type="radio" name="search_type" value="Todo" checked>Todo
-    <input type="radio" name="search_type" value="Título">Título
-    <input type="radio" name="search_type" value="Autor">Autor<br>
-    Fecha máxima de antigüedad: <input type="date" name="search_date_init" value="2000/01/01">
+<form>
+    <div class='form-group'>
+        <input type="text" class="form-control" placeholder="Buscar">
+        Filtrar por: <input type="radio" name="search_type" value="Todo" checked>Todo
+        <input type="radio" name="search_type" value="Título">Título
+        <input type="radio" name="search_type" value="Autor">Autor<br>
+        Fechas de publicación: entre <input type="date" name="search_date_init" value="01/01/2000">
+        y <input type="date" name="search_date_init" value="26/08/2017">
+    </div>
 </form>
-
-<app-material></app-material>
+<div class="row">
+    <app-material *ngFor="let item of items" [item]="item"></app-material>
+</div>
