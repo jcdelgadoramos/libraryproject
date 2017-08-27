@@ -1,26 +1,68 @@
 <h2>Editar la información del material:</h2>
-<form>
+<form (ngSubmit)="onSubmit(form)" #form="ngForm"> 
   <div class="form-group">
+    <input type="hidden" id="id_book" name="id_book" [ngModel]="selectedBook.id_book">
+
     <label for="autor">Autor</label>
-    <input type="text" id="autor" name="autor" class="form-control" [(ngModel)]="selectedMarc.autor">
+    <input  type="text" 
+            id="autor" 
+            name="autor" 
+            class="form-control" 
+            [ngModel]="selectedBook.autor"
+            required
+            #autorCtrl="ngModel">
+    <span class="help-block" *ngIf="autorCtrl.invalid && autorCtrl.touched">Campo obligatorio</span>
   </div>
   <div class="form-group">
     <label for="titulo">Tìtulo</label>
-    <input type="text" id="titulo" name="titulo" class="form-control" [(ngModel)]="selectedMarc.titulo">
+    <input  type="text" 
+            id="titulo" 
+            name="titulo" 
+            class="form-control" 
+            [ngModel]="selectedBook.titulo"
+            required
+            #tituloCtrl="ngModel">
+    <span class="help-block" *ngIf="tituloCtrl.invalid && tituloCtrl.touched">Campo obligatorio</span>
   </div>
   <div class="form-group">
     <label for="editorial">Editorial</label>
-    <input type="text" id="editorial" name="editorial" class="form-control" [(ngModel)]="selectedMarc.editorial">
+    <input  type="text" 
+            id="editorial" 
+            name="editorial" 
+            class="form-control" 
+            [ngModel]="selectedBook.editorial">
   </div>  
   <div class="form-group">
     <label for="fecha_publicacion">Fecha de publicación</label>
-    <input type="text" id="fecha_publicacion" name="fecha_publicacion" class="form-control" [(ngModel)]="selectedMarc.fecha_publicacion">
+    <input  type="text" 
+            id="fecha_publicacion" 
+            name="fecha_publicacion" 
+            class="form-control" 
+            [ngModel]="selectedBook.fecha_publicacion"
+            required
+            #fecha_publicacionCtrl="ngModel">
+    <span class="help-block" *ngIf="fecha_publicacionCtrl.invalid && fecha_publicacionCtrl.touched">Campo obligatorio</span>
+  </div>
+  <div class="form-group">
+    <label for="numero_ejemplares">Número de ejemplares</label>
+    <input  type="text" 
+            id="numero_ejemplares" 
+            name="numero_ejemplares" 
+            class="form-control" 
+            [ngModel]="selectedBook.numero_ejemplares"
+            required
+            #numero_ejemplaresCtrl="ngModel">
+    <span class="help-block" *ngIf="numero_ejemplaresCtrl.invalid && numero_ejemplaresCtrl.touched">Campo obligatorio</span>
   </div>
   <div class="form-group">
     <label for="portada">Imagen de portada</label>
-    <input type="text" id="portada" name="portada" class="form-control" [(ngModel)]="selectedMarc.portada">
+    <input  type="text" 
+            id="portada" 
+            name="portada" 
+            class="form-control" 
+            [ngModel]="selectedBook.portada">
   </div>
-  <button type="submit" class='btn btn-primary'>Guardar</button>
+  <button type="submit" class='btn btn-primary' [disabled]="form.invalid">Guardar</button>
   <button type="reset" class='btn btn-default'>Limpiar</button>
   <button type="button" class='btn btn-danger'>Eliminar</button>
 </form>

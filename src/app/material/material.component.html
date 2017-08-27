@@ -6,8 +6,8 @@
         <h4>{{ book.autor }}</h4>
         <p>{{ book.numero_ejemplares }} ejemplares</p>
         <p>
-            <button class="btn btn-primary">Ver detalles</button> 
-            <button class="btn btn-default">Editar</button>
+            <button class="btn btn-primary" routerLink="/book/{{ book.id_book }}">Ver detalles</button> 
+            <button class="btn btn-default" routerLink="/edit/{{ book.id_book }}">Editar</button>
         </p>
     </div>
     </div>

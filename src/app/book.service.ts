@@ -46,6 +46,50 @@ export class BookService {
     }
   ];
 
-  constructor() { }
+  numberOfBooks;
+
+  constructor() {
+    this.numberOfBooks = this.availableBooks.length + 1;
+  }
+  
+  mapBook(id_book) {
+    const pos = this.availableBooks.findIndex((book) => {
+      return book.id_book == id_book;
+    }); 
+    if (pos !== -1) {
+      return this.availableBooks[pos];
+    } else {
+      return { id_book: id_book, 
+        numero_ejemplares: 0, 
+        autor: '', 
+        titulo: '',
+        editorial: '',
+        fecha_publicacion: '',
+        portada: ''
+      }
+    }
+  }
+
+  submitBook(id_book, autor, titulo, editorial,fecha_publicacion, numero_ejemplares, portada) {
+    const pos = this.availableBooks.findIndex((book) => {
+      return book.id_book == id_book;
+    })
+    if (pos !== -1) {
+      this.availableBooks[pos].autor = autor;
+      this.availableBooks[pos].titulo = titulo;
+      this.availableBooks[pos].fecha_publicacion = fecha_publicacion;
+      this.availableBooks[pos].numero_ejemplares = numero_ejemplares;
+      this.availableBooks[pos].portada = portada;
+    } else {
+      const newBook = { id_book: this.numberOfBooks++, 
+                        autor: autor, 
+                        titulo: titulo,
+                        editorial: editorial,
+                        fecha_publicacion: fecha_publicacion,
+                        numero_ejemplares: numero_ejemplares,
+                        portada: portada };
+      this.availableBooks.push(newBook);
+    }
+  }
 
 }

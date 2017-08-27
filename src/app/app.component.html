@@ -4,11 +4,14 @@
     <div class="row-col-xs">
       <h1>Bienvenidos a {{title}}</h1>
       <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a href="#">Explorar</a></li>
-        <li role="presentation"><a href="#">Editar Tipos</a></li>
-        <li role="presentation"><a href="#">Editar Campos</a></li>
+          <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a routerLink="/">Explorar</a></li>
+          <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a routerLink="/field">Editar tipos</a></li>
+          <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a routerLink="/edit/new">Crear nuevo libro</a></li>
       </ul>
-      <app-field></app-field>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
