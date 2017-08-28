@@ -59,7 +59,8 @@
   </div>
   <div class="form-group">
     <label for="portada">Imagen de portada</label>
-    <input  type="text" 
+    <input  type="file"
+            accept="image/*" 
             id="portada" 
             name="portada" 
             class="form-control" 
@@ -67,5 +68,5 @@
   </div>
   <button type="submit" class='btn btn-primary' [disabled]="form.invalid">Guardar</button>
   <button type="reset" class='btn btn-default'>Limpiar</button>
-  <button type="button" class='btn btn-danger' routerLink='/'>Cancelar</button>
+  <button type="button" class='btn btn-danger' routerLink='/navigate'>Cancelar</button>
 </form>

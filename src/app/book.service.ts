@@ -30,7 +30,7 @@ export class BookService {
     },
     { id_book: 4, 
       numero_ejemplares: 2, 
-      autor: 'Juan Álvaro Caviezes-Guerra', 
+      autor: 'Juan Álvaro Caviezes-Príncipe', 
       titulo: 'Las guerras termodinámicas',
       editorial: 'Fondo Editorial UNASUFIL',
       fecha_publicacion: 1981,
@@ -42,6 +42,14 @@ export class BookService {
       titulo: 'El hastío hereje',
       editorial: 'Pearson',
       fecha_publicacion: 2015,
+      portada: 'https://i.pinimg.com/236x/12/5d/a6/125da6300cc7045e5210e5490b5b0f85--minimalist-book-book-cover-design.jpg'
+    },
+    { id_book: 6, 
+      numero_ejemplares: 4, 
+      autor: 'Nicolás Macchiavello', 
+      titulo: 'El Príncipe',
+      editorial: 'Planeta',
+      fecha_publicacion: 1513,
       portada: 'https://i.pinimg.com/236x/12/5d/a6/125da6300cc7045e5210e5490b5b0f85--minimalist-book-book-cover-design.jpg'
     }
   ];

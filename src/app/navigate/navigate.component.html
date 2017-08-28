@@ -1,13 +1,12 @@
-<form>
+<form (ngSubmit)="filter()" #form="ngForm">
     <br>
     <div class='form-group'>
         <input  type="text" 
                 id="busqueda" 
                 name="busqueda" 
                 class="form-control" 
-                placeholder="Buscar"
-                [(ngModel)]="busqueda"
-                (change)="filter()">
+                placeholder="Ingresar para búsqueda"
+                [(ngModel)]="busqueda">
         
         <label for="search_type">Filtrar por</label>
         <input type="radio" 
@@ -25,6 +24,8 @@
                 name="search_type" 
                 value='autor' 
                 [(ngModel)]="filtro">Autor
+                
+        <button type="submit" class='btn btn-primary derecha'>Buscar</button>
     </div>
 </form> 
 

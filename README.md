@@ -1,5 +1,10 @@
-# AngularEssentials
+# LibraryProject
 
+Proyecto hecho por José Carlos Delgado Ramos como parte del proceso de aplicación para Inka Labs.
+El proyecto está enteramente hecho como parte FrontEnd, y se realizó con Angular, Angular CLI y Bootstrap.
+
+
+# AngularEssentials
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
 
 ## Development server
