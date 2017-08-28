@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../book.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { BookService } from '../book.service';
 export class MaterialEditComponent implements OnInit {
 
   activatedRoute: ActivatedRoute;  
+  router: Router;
   bookService: BookService;
   selectedBook = {  id_book: null, 
                     numero_ejemplares: null, 
@@ -20,8 +21,9 @@ export class MaterialEditComponent implements OnInit {
                     portada: ''
   };
 
-  constructor(activatedRoute: ActivatedRoute, bookService: BookService) {
+  constructor(activatedRoute: ActivatedRoute, router: Router, bookService: BookService) {
     this.activatedRoute = activatedRoute;
+    this.router = router;
     this.bookService = bookService;
   }
 
@@ -48,6 +50,8 @@ export class MaterialEditComponent implements OnInit {
                                 submittedForm.value.fecha_publicacion,
                                 submittedForm.value.numero_ejemplares,
                                 submittedForm.value.portada);
+    
+    this.router.navigateByUrl('/navigate');
     
   }
 

@@ -17,9 +17,9 @@ export class ListComponent implements OnInit {
 
   constructor(bookService: BookService) {
     this.bookService = bookService;
-    this.books = bookService.availableBooks;
-    this.authors = bookService.existingAuthors;
-    this.years = bookService.registeredYears;
+    this.books = bookService.getBooks();
+    this.authors = bookService.getAuthors();
+    this.years = bookService.getYears();
   }
 
   ngOnInit() {

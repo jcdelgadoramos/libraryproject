@@ -15,7 +15,7 @@ export class NavigateComponent implements OnInit {
 
   constructor(bookService: BookService) {
     this.bookService = bookService;
-    this.books = bookService.availableBooks;
+    this.books = bookService.getBooks();
   }
 
   ngOnInit() {

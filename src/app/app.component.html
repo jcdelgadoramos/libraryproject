@@ -3,11 +3,15 @@
   <div class="row">
     <div class="row-col-xs">
       <h1>Bienvenidos a {{title}}</h1>
+
       <ul class="nav nav-tabs">
           <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-            <a routerLink="/">Explorar</a></li>
+            <a routerLink="/">Login</a></li>
+          <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a routerLink="/navigate">Explorar</a></li>
           <!-- <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <a routerLink="/field">Editar tipos</a></li> -->
+          
           <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <a routerLink="/list">Listar</a></li>
           <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">

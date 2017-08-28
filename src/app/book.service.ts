@@ -60,6 +60,22 @@ export class BookService {
       return book.fecha_publicacion;
     }).sort();
   }
+
+  getBooks() {
+    return this.availableBooks;
+  }
+
+  getYears() {
+    return this.availableBooks.map((book) => {
+      return book.fecha_publicacion;
+    }).sort();
+  }
+
+  getAuthors() {
+    return this.availableBooks.map((book) => {
+      return book.autor;
+    }).sort();
+  }
   
   mapBook(id_book) {
     const pos = this.availableBooks.findIndex((book) => {

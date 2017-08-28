@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule} from '@angular/router';
+import { RouterModule } from '@angular/router';
  
 import { AppComponent } from './app.component';
 import { AppLoginComponent } from './login/login.component';
@@ -12,10 +12,12 @@ import { MaterialComponent } from './material/material.component';
 import { MarcService } from './marc.service';
 import { BookService } from './book.service';
 import { BookDetailService } from './book-detail.service';
+import { UserService } from './user.service';
 import { ListComponent } from './list/list.component';
 
 const routes = [
-  { path: '', component: NavigateComponent },
+  { path: '', component: AppLoginComponent },
+  { path: 'navigate', component: NavigateComponent },
   { path: 'field', component: FieldComponent },
   /*{ path: 'book', component: MaterialFullComponent, children: [
     { path: '', redirectTo: '', pathMatch: 'full' },
@@ -52,7 +54,8 @@ const routes = [
   providers: [
     MarcService,
     BookService,
-    BookDetailService
+    BookDetailService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
