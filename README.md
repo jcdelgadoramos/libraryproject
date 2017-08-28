@@ -21,6 +21,7 @@ Contraseña: user
 
 # Funcionalidades:
 -Autenticación básica de usuario.
+-Listado de libros disponibles.
 -Creación, edición y modificación de información de los libros.
 -Búsqueda por autor/título.
 -Filtrado por autor/año de publicación.
