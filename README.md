@@ -1,6 +1,6 @@
 # LibraryProject 0.1
 
-Proyecto hecho por José Carlos Delgado Ramos como parte del proceso de aplicación para Inka Labs.
+Proyecto hecho por José Carlos Delgado Ramos.
 
 El proyecto está enteramente hecho como parte FrontEnd, y se realizó con angular, angular-cli y bootstrap.
 
